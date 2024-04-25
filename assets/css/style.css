@@ -39,6 +39,13 @@ li {
 main {
   padding-top: 100px;
 }
+section {
+  background: rgb(253, 253, 231);
+  padding: 20px;
+}
+section + section {
+  margin-top: 20px;
+}
 footer {
   text-align: center;
   padding: 20px;
@@ -138,37 +145,33 @@ h1 {
   padding: 20px;
   border-radius: 50px;
 }
-h1 a{
+h1 a {
   color: #444;
 }
-/* top */
-section {
-  background: rgb(253, 253, 231);
-  padding: 20px;
-}
-main > .container > section + section {
-  margin-top: 20px;
-}
-.newThread {
+/* top all*/
+.top .newThread{
   background: #fff;
 }
-.newThread a {
+.top .newThread a{
   background: #a89158;
   color: #fff;
   padding: 20px 30px;
   border-radius: 30px;
 }
-.newThread a:hover {
+.top .newThread a:hover{
   opacity: 0.7;
 }
-.thread .contents {
+.top .thread .contents,
+.all .thread .contents {
   padding-top: 10px;
 }
-.options {
+.top .options,
+.all .options {
   padding: 10px;
   text-align: center;
 }
-.options p {
+.top .options p,
+.all .options p {
   padding: 0 10px;
   display: inline-block;
 }
@@ -184,13 +187,13 @@ main > .container > section + section {
   margin: auto;
   text-align: center;
 }
-.login label ,
+.login label,
 .register label {
   display: block;
   margin: 10px;
   text-align: center;
 }
-.login #login_btn ,
+.login #login_btn,
 .register #register_btn {
   display: block;
   background: #a89158;
@@ -205,16 +208,16 @@ main > .container > section + section {
   opacity: 0.7;
   cursor: pointer;
 }
-.login_form a{
+.login_form a {
   display: block;
   text-align: center;
 }
 /* complete logout*/
 .complete,
-.logout{
+.logout {
   text-align: center;
 }
 .complete p,
-.logout p{
+.logout p {
   padding: 20px;
 }

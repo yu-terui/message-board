@@ -18,4 +18,7 @@ app.get("/complete", (req, res) => {
 app.get("/logout", (req, res) => {
   res.render("logout.ejs")
 })
+app.get("/all", (req, res) => {
+  res.render("all.ejs")
+})
 app.listen(3000);
