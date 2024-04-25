@@ -1,10 +1,83 @@
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>sample</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <title>なんでも掲示板</title>
+    </head>
+    <body>
+        <header>
+                <div class="header_inner">
+                    <h1>なんでも掲示板</h1>
+                    <nav id="js-nav">
+                        <ul>
+                            <li>ようこそ○○さん</li>
+                            <li><a href="">新規スレッドを書く</a></li>
+                            <li><a href="">ログイン</a></li>
+                            <li><a href="">新規ユーザー登録</a></li>
+                            <li><a href="">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
+                            <!-- <li><input type="text" placeholder="検索"></li> -->
+                        </ul>
+                    </nav>
+                    <button class="header_hamburger hamburger" id="js-hamburger">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+        </header>
+        <main>
+            <div class="container">
+                <section class="newThread">
+                    <p><a href="">新規スレッドを書く</a></p>
+                </section>
+                <section class="threads">
+                    <div>
+                        <a href="">No.0 スレッドタイトル(レス数)</a>, <a href="">No.1 スレッドタイトル(レス数)</a>, <a href="">No.2 スレッドタイトル(レス数)</a>, <a href="">No.3 スレッドタイトル(レス数)</a>, <a href="">No.4 スレッドタイトル(レス数)</a>, <a href="">No.5 スレッドタイトル(レス数)</a>, <a href="">No.6 スレッドタイトル(レス数)</a>, <a href="">No.7 スレッドタイトル(レス数)</a>, <a href="">No.8 スレッドタイトル(レス数)</a>, <a href="">No.9 スレッドタイトル(レス数)</a>...
+                    </div>
+                </section>
+                <section class="thread">
+                    <h2>No.1 スレッドタイトル</h2>
+                    <section>
+                        <h3>1.名前：ユーザー名：2024/4/25(木)15:42 <a href="">編集</a></h3>
+                        <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
+                    </section>
+                    <section>
+                        <h3>2.名前：ユーザー名：2024/4/25(木)15:43 <a href="">編集</a></h3>
+                        <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
+                    </section>
+                    <div class="options">
+                        <p><a href="">書き込む</a></p>
+                        <p><a href="">お気に入り(ふぁぼ数)</a></p>
+                        <p><a href="">全部読む(レス数)</a></p>
+                    </div>
+                </section>
+                <section class="thread">
+                    <h2>No.2 スレッドタイトル</h2>
+                    <section>
+                        <h3>1.名前：ユーザー名：2024/4/25(木)15:42 <a href="">編集</a></h3>
+                        <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
+                    </section>
+                    <section>
+                        <h3>2.名前：ユーザー名：2024/4/25(木)15:43 <a href="">編集</a></h3>
+                        <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
+                    </section>
+                    <div class="options">
+                        <p><a href="">書き込む</a></p>
+                        <p><a href="">お気に入り(ふぁぼ数)</a></p>
+                        <p><a href="">全部読む(レス数)</a></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="container"><small>&copy;2024 message-board.All Rights Reserved.</small></div>
+        </footer>
+    </body>
+    <script>
+        const ham = document.getElementById("js-hamburger");
+        const nav = document.getElementById("js-nav");
+        ham.addEventListener("click",function(){
+            ham.classList.toggle("active")
+            nav.classList.toggle("active")
+        })
+    </script>
 </html>
