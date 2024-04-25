@@ -9,17 +9,17 @@
         <header>
                 <div class="header_inner">
                     <h1>なんでも掲示板</h1>
-                    <nav id="js-nav">
+                    <nav id="js_nav">
                         <ul>
-                            <li>ようこそ○○さん</li>
+                            <li>ようこそ&nbsp;○○さん</li>
                             <li><a href="">新規スレッドを書く</a></li>
-                            <li><a href="">ログイン</a></li>
+                            <li><a href="/login">ログイン</a></li>
                             <li><a href="">新規ユーザー登録</a></li>
                             <li><a href="">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
                             <!-- <li><input type="text" placeholder="検索"></li> -->
                         </ul>
                     </nav>
-                    <button class="header_hamburger hamburger" id="js-hamburger">
+                    <button class="header_hamburger hamburger" id="js_hamburger">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
@@ -73,8 +73,8 @@
         </footer>
     </body>
     <script>
-        const ham = document.getElementById("js-hamburger");
-        const nav = document.getElementById("js-nav");
+        const ham = document.getElementById("js_hamburger");
+        const nav = document.getElementById("js_nav");
         ham.addEventListener("click",function(){
             ham.classList.toggle("active")
             nav.classList.toggle("active")
