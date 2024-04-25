@@ -12,4 +12,7 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register.ejs")
 })
+app.get("/complete", (req, res) => {
+  res.render("complete.ejs")
+})
 app.listen(3000);

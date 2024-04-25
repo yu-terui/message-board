@@ -138,6 +138,9 @@ h1 {
   padding: 20px;
   border-radius: 50px;
 }
+h1 a{
+  color: #444;
+}
 /* top */
 section {
   background: rgb(253, 253, 231);
@@ -205,4 +208,10 @@ main > .container > section + section {
 .login_form a{
   display: block;
   text-align: center;
+}
+.complete{
+  text-align: center;
+}
+.complete p{
+  padding: 20px;
 }
