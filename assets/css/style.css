@@ -172,7 +172,7 @@ main > .container > section + section {
   padding: 0 10px;
   display: inline-block;
 }
-/* ログイン 新規登録*/
+/* login register*/
 .login h2,
 .register h2 {
   text-align: center;
@@ -209,9 +209,12 @@ main > .container > section + section {
   display: block;
   text-align: center;
 }
-.complete{
+/* complete logout*/
+.complete,
+.logout{
   text-align: center;
 }
-.complete p{
+.complete p,
+.logout p{
   padding: 20px;
 }

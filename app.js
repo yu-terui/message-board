@@ -15,4 +15,7 @@ app.get("/register", (req, res) => {
 app.get("/complete", (req, res) => {
   res.render("complete.ejs")
 })
+app.get("/logout", (req, res) => {
+  res.render("logout.ejs")
+})
 app.listen(3000);
