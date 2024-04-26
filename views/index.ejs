@@ -11,13 +11,13 @@
                 <h1><a href="/">なんでも掲示板</a></h1>
                 <nav id="js_nav">
                     <ul>
-                        <li>ようこそ&nbsp;○○さん</li>
-                        <li><a href="">新規スレッドを書く</a></li>
+                        <li>ようこそ&nbsp;ゲストさん</li>
+                        <li><a href="/new">新規スレッドを書く</a></li>
                         <li><a href="/login">ログイン</a></li>
                         <li><a href="/register">新規ユーザー登録</a></li>
-                        <li><a href="">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
-                        <!-- <li><input type="text" placeholder="検索"></li> -->
-                        <li><a href="/favorite">お気に入りスレッド</a></li><!-- ログインユーザーのみ -->
+                        <li><a id="board_search">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
+                        <li><input type="text" placeholder="検索" id="board_search_box"></li>
+                        <!-- <li><a href="/favorite">お気に入り一覧</a></li>ログインユーザーのみ -->
                     </ul>
                 </nav>
                 <button class="header_hamburger hamburger" id="js_hamburger">
@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="top">
                     <section class="newThread">
-                        <p><a href="">新規スレッドを書く</a></p>
+                        <p><a href="/new">新規スレッドを書く</a></p>
                     </section>
                     <section class="threads">
                         <div>
@@ -47,8 +47,8 @@
                             <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
                         </section>
                         <div class="options">
-                            <p><a href="">書き込む</a></p>
-                            <p><a href="">お気に入り(ふぁぼ数)</a></p>
+                            <p><a class="comment">書き込む</a></p>
+                            <p><a>お気に入り(ふぁぼ数)</a></p>
                             <p><a href="/all">全部読む(レス数)</a></p>
                         </div>
                     </section>
@@ -63,8 +63,8 @@
                             <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
                         </section>
                         <div class="options">
-                            <p><a href="">書き込む</a></p>
-                            <p><a href="">お気に入り(ふぁぼ数)</a></p>
+                            <p><a class="comment">書き込む</a></p>
+                            <p><a>お気に入り(ふぁぼ数)</a></p>
                             <p><a href="/all">全部読む(レス数)</a></p>
                         </div>
                     </section>
@@ -82,5 +82,24 @@
             ham.classList.toggle("active")
             nav.classList.toggle("active")
         })
+        const board_search = document.getElementById("board_search");
+        const box = document.getElementById("board_search_box");
+        board_search.addEventListener("click", function () {
+            box.classList.toggle("active")
+        })
+        document.addEventListener("DOMContentLoaded", function () {
+            const comment = document.querySelectorAll('.comment');
+            for (let i = 0; i < comment.length; i++) {
+                comment[i].addEventListener("click", function () {
+                    const thread = document.querySelectorAll(".thread")[i];
+                    const insert_area = document.createElement("div");
+                    insert_area.innerHTML = `
+                            <label for="username">名前</label><input type="text" id="username" name="username">
+                            <label for="email">email</label><input type="text" id="email" name="email">
+                            <textarea name="" id="" cols="50" rows="10"></textarea><button class="btn" id="comment_btn">書き込む</button>`
+                    thread.append(insert_area)
+                }, false)
+            }
+        }, false)
     </script>
 </html>

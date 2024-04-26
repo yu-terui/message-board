@@ -22,6 +22,7 @@ a {
 }
 a:hover {
   color: orange;
+  cursor: pointer;
 }
 li {
   list-style-type: none;
@@ -35,6 +36,19 @@ li {
   .container {
     width: 95%;
   }
+}
+.btn {
+  display: block;
+  background: #a89158;
+  color: #fff;
+  margin: 10px auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+}
+.btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
 }
 main {
   padding-top: 100px;
@@ -50,7 +64,21 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
+label{
+  margin: 10px;
+  text-align: center;
+}
+input{
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+textarea {
+  display: block;
+  width: 100%;
+  margin: 20px auto 0;
+  resize: none;
+}
 /* header */
 header {
   width: 100%;
@@ -75,23 +103,6 @@ header nav {
   transform: translateX(200%);
   background: rgb(177, 239, 218, 0.9);
   transition: ease 0.4s;
-}
-header nav ul li {
-  text-align: center;
-  padding: 5px;
-}
-header nav ul li a {
-  display: block;
-  background: rgb(255, 255, 255, 0.8);
-  padding: 10px;
-}
-header nav ul li input {
-  padding: 5px 10px;
-  margin: auto;
-}
-header nav ul li:first-child {
-  padding: 10px;
-  font-size: 120%;
 }
 .header_hamburger {
   width: 48px;
@@ -137,6 +148,30 @@ nav.active {
   top: -13px;
   transform: rotate(-45deg);
 }
+/* header_other */
+header nav ul li {
+  text-align: center;
+  padding: 5px;
+}
+header nav ul li {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+}
+header nav ul li input {
+  padding: 5px 10px;
+}
+header nav ul li:first-child {
+  padding: 10px;
+  font-size: 120%;
+  background: none;
+}
+#board_search_box{
+  display: none;
+}
+#board_search_box.active{
+  display: block;
+}
 h1 {
   font-size: 28px;
   text-align: center;
@@ -178,43 +213,49 @@ h1 a {
   padding: 0 10px;
   display: inline-block;
 }
+.top label,
+.all label {
+  display: inline-block;
+}
+.top input,
+.all input {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .top label,
+  .all label {
+    display: block;
+  }
+  .top input,
+  .all input {
+    display: block;
+    width: 100%;
+  }
+}
+.top textarea,
+.all textarea {
+  display: block;
+  width: 100%;
+  margin: 20px auto 0;
+  resize: none;
+}
 .favorite .favorite_title{
   text-align: center;
   padding: 20px;
 }
-/* login register*/
+/* login register new*/
 .login h2,
-.register h2 {
+.register h2{
   text-align: center;
 }
 .login input,
-.register input {
+.register input{
   display: block;
   width: 80%;
-  padding: 10px;
-  margin: auto;
-  text-align: center;
 }
 .login label,
-.register label {
+.register label{
   display: block;
-  margin: 10px;
-  text-align: center;
-}
-.login #login_btn,
-.register #register_btn {
-  display: block;
-  background: #a89158;
-  color: #fff;
-  margin: 10px auto;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 30px;
-}
-.login #login_btn:hover,
-.register #register_btn:hover {
-  opacity: 0.7;
-  cursor: pointer;
 }
 .login_form a {
   display: block;
@@ -239,14 +280,9 @@ h1 a {
 }
 .edit label {
   display: inline-block;
-  margin: 10px;
-  text-align: center;
 }
 .edit input {
   display: inline-block;
-  padding: 10px;
-  margin: auto;
-  text-align: center;
 }
 @media screen and (max-width: 768px) {
   .edit label {
@@ -257,12 +293,6 @@ h1 a {
     width: 100%;
   }
 }
-.edit textarea {
-  display: block;
-  width: 100%;
-  margin: 20px auto 0;
-  resize: none;
-}
 .edit .btns {
   text-align: right;
 }
@@ -270,16 +300,36 @@ h1 a {
   display: inline-block;
   margin: 0 10px;
 }
-.edit #edit_btn {
-  display: inline-block;
-  background: #a89158;
-  color: #fff;
-  margin: 0 10px;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 30px;
+/* new */
+.new{
+  padding: 20px 0;
 }
-.edit #edit_btn:hover {
-  opacity: 0.7;
-  cursor: pointer;
+.new h2{
+  text-align: center;
+}
+.new input {
+  width: 100%;
+  margin: 10px 0;
+}
+@media screen and (max-width: 768px) {
+  .new label {
+    display: block;
+  }
+  .new input {
+    display: block;
+    width: 100%;
+  }
+}
+.new .new_area{
+  width: 80%;
+  margin: auto;
+}
+.new .grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  .new .grid{
+    grid-template-columns: 1fr;
+  }
 }

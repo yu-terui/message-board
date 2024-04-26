@@ -27,4 +27,7 @@ app.get("/edit", (req, res) => {
 app.get("/favorite", (req, res) => {
   res.render("favorite.ejs")
 })
+app.get("/new", (req, res) => {
+  res.render("new.ejs")
+})
 app.listen(3000);

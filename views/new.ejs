@@ -27,13 +27,18 @@
         </header>
         <main>
             <div class="container">
-                <section class="login">
-                    <form class="login_form" action="" method="">
-                        <h2>ユーザーログイン</h2>
-                        <label for="id">ID(メールアドレス)</label><input type="text" id="id" />
-                        <label for="pass">パスワード</label><input type="text" id="pass" />
-                        <button class="btn" id="login_btn" type="submit">ログイン</button>
-                        <p><a href="">新規ユーザー登録はこちら</a></p>
+                <section class="new">
+                    <form class="new_form" action="/" method="">
+                        <h2>新規スレッド作成</h2>
+                        <section class="new_area">
+                            <div class="grid"><label for="user">ユーザー名</label><input type="text" id="user" name="user" /></div>
+                            <div class="grid"><label for="id">ID(メールアドレス)</label><input type="text" id="id" name="id" /></div>
+                            <div class="grid"><label for="pass">パスワード</label><input type="text" id="pass" name="pass" /></div>
+                            <div class="grid"><label for="thread_name">スレッドタイトル</label><input type="text" id="thread_name" name="thread_name" /></div>
+                            <textarea name="thread_content" id="thread_content" cols="50" rows="10">投稿内容をここに書いてください</textarea>
+                        </section>
+                        <button class="btn" id="create_btn" type="submit">作成</button>
+                        <!-- ボタンを押すとバリデーション -->
                     </form>
                 </section>
             </div>

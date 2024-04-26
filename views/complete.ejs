@@ -11,13 +11,13 @@
                 <h1><a href="/">なんでも掲示板</a></h1>
                 <nav id="js_nav">
                     <ul>
-                        <li>ようこそ&nbsp;○○さん</li>
-                        <li><a href="">新規スレッドを書く</a></li>
+                        <li>ようこそ&nbsp;ゲストさん</li>
+                        <li><a href="/new">新規スレッドを書く</a></li>
                         <li><a href="/login">ログイン</a></li>
                         <li><a href="/register">新規ユーザー登録</a></li>
-                        <li><a href="">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
-                        <!-- <li><input type="text" placeholder="検索"></li> -->
-                        <li><a href="/favorite">お気に入りスレッド</a></li><!-- ログインユーザーのみ -->
+                        <li><a id="board_search">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
+                        <li><input type="text" placeholder="検索" id="board_search_box"></li>
+                        <!-- <li><a href="/favorite">お気に入り一覧</a></li>ログインユーザーのみ -->
                     </ul>
                 </nav>
                 <button class="header_hamburger hamburger" id="js_hamburger">
@@ -44,6 +44,11 @@
         ham.addEventListener("click", function () {
             ham.classList.toggle("active")
             nav.classList.toggle("active")
+        })
+        const board_search = document.getElementById("board_search");
+        const box = document.getElementById("board_search_box");
+        board_search.addEventListener("click", function () {
+            box.classList.toggle("active")
         })
     </script>
 </html>
