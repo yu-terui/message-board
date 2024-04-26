@@ -1,0 +1,66 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <title>なんでも掲示板</title>
+    </head>
+    <body>
+        <header>
+                <div class="header_inner">
+                    <h1><a href="/">なんでも掲示板</a></h1>
+                    <nav id="js_nav">
+                        <ul>
+                            <li>ようこそ&nbsp;○○さん</li>
+                            <li><a href="">新規スレッドを書く</a></li>
+                            <li><a href="/login">ログイン</a></li>
+                            <li><a href="/register">新規ユーザー登録</a></li>
+                            <li><a href="">掲示板検索</a></li><!-- 押すと下の検索ボックスが現れる -->
+                            <!-- <li><input type="text" placeholder="検索"></li> -->
+                            <li><a href="/favorite">お気に入りスレッド</a></li><!-- ログインユーザーのみ -->
+                        </ul>
+                    </nav>
+                    <button class="header_hamburger hamburger" id="js_hamburger">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="edit">
+                    <section class="thread">
+                        <h2>No.1 スレッドタイトル</h2>
+                        <section>
+                            <section>
+                                <h3>1.名前：ユーザー名：2024/4/25(木)15:42 <a href="">編集</a></h3>
+                                <p class="contents">コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容コンテンツ内容</p>
+                            </section>
+                            <section class="editer">
+                                <label for="username">名前</label>
+                                <input placeholder="ユーザー名" type="text" id="username" name="username">
+                                <label for="email">email</label>
+                                <input placeholder="メールアドレス" type="text" id="email" name="email">
+                                <textarea name="edit_contents" id="edit_contents" cols="50" rows="10"></textarea>
+                            </section>
+                        </section>
+                        <div class="btns">
+                            <p id="delete_btn"><a href="">投稿を削除</a></p>
+                            <button id="edit_btn">編集</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container"><small>&copy;2024 message-board.All Rights Reserved.</small></div>
+        </footer>
+    </body>
+    <script>
+        const ham = document.getElementById("js_hamburger");
+        const nav = document.getElementById("js_nav");
+        ham.addEventListener("click",function(){
+            ham.classList.toggle("active")
+            nav.classList.toggle("active")
+        })
+    </script>
+</html>

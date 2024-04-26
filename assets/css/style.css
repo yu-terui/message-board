@@ -148,32 +148,39 @@ h1 {
 h1 a {
   color: #444;
 }
-/* top all*/
-.top .newThread{
+/* top all favorite*/
+.top .newThread {
   background: #fff;
 }
-.top .newThread a{
+.top .newThread a {
   background: #a89158;
   color: #fff;
   padding: 20px 30px;
   border-radius: 30px;
 }
-.top .newThread a:hover{
+.top .newThread a:hover {
   opacity: 0.7;
 }
 .top .thread .contents,
-.all .thread .contents {
+.all .thread .contents,
+.favorite .thread .contents {
   padding-top: 10px;
 }
 .top .options,
-.all .options {
+.all .options,
+.favorite .options {
   padding: 10px;
   text-align: center;
 }
 .top .options p,
-.all .options p {
+.all .options p,
+.favorite .options p {
   padding: 0 10px;
   display: inline-block;
+}
+.favorite .favorite_title{
+  text-align: center;
+  padding: 20px;
 }
 /* login register*/
 .login h2,
@@ -183,7 +190,8 @@ h1 a {
 .login input,
 .register input {
   display: block;
-  padding: 10px 80px;
+  width: 80%;
+  padding: 10px;
   margin: auto;
   text-align: center;
 }
@@ -220,4 +228,58 @@ h1 a {
 .complete p,
 .logout p {
   padding: 20px;
+}
+/* edit */
+.edit .thread .contents {
+  padding-top: 10px;
+}
+.edit .editer {
+  width: 80%;
+  margin: auto;
+}
+.edit label {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+.edit input {
+  display: inline-block;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .edit label {
+    display: block;
+  }
+  .edit input {
+    display: block;
+    width: 100%;
+  }
+}
+.edit textarea {
+  display: block;
+  width: 100%;
+  margin: 20px auto 0;
+  resize: none;
+}
+.edit .btns {
+  text-align: right;
+}
+.edit #delete_btn {
+  display: inline-block;
+  margin: 0 10px;
+}
+.edit #edit_btn {
+  display: inline-block;
+  background: #a89158;
+  color: #fff;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+}
+.edit #edit_btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
