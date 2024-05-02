@@ -1,0 +1,343 @@
+/* reset */
+body {
+  font-size: 16px;
+  color: #444;
+}
+html,
+body,
+form,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+a {
+  color: rgb(204, 117, 3);
+  text-decoration: none;
+}
+a:hover {
+  color: orange;
+  cursor: pointer;
+}
+li {
+  list-style-type: none;
+}
+/* global */
+.container {
+  width: 960px;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+.btn {
+  display: block;
+  background: #a89158;
+  color: #fff;
+  margin: 10px auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+}
+.btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+main {
+  padding-top: 100px;
+}
+section {
+  background: rgb(253, 253, 231);
+  padding: 20px;
+}
+section + section {
+  margin-top: 20px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+}
+label{
+  margin: 10px;
+  text-align: center;
+}
+input{
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+textarea {
+  display: block;
+  width: 100%;
+  margin: 20px auto 0;
+  resize: none;
+}
+/* header */
+header {
+  width: 100%;
+  background: rgb(177, 239, 218);
+  position: fixed;
+  z-index: 999;
+}
+.header_inner {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+header nav {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 80px;
+  width: 50%;
+  height: 100vh;
+  transform: translateX(200%);
+  background: rgb(177, 239, 218, 0.9);
+  transition: ease 0.4s;
+}
+.header_hamburger {
+  width: 48px;
+  height: 100%;
+}
+.hamburger {
+  background: transparent;
+  border-color: transparent;
+  z-index: 9999;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background: #444;
+  position: relative;
+  transition: ease 0.4s;
+  display: block;
+}
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
+}
+.hamburger span:nth-child(3) {
+  top: 0;
+}
+/* クリック後 */
+nav.active {
+  transform: translateX(100%);
+}
+.hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg);
+}
+/* header_other */
+header nav ul li {
+  text-align: center;
+  padding: 5px;
+}
+header nav ul li {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+}
+header nav ul li input {
+  padding: 5px 10px;
+}
+header nav ul li:first-child {
+  padding: 10px;
+  font-size: 120%;
+  background: none;
+}
+#board_search_box{
+  display: none;
+}
+#board_search_box.active{
+  display: block;
+}
+h1 {
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin: auto;
+  padding: 20px;
+  border-radius: 50px;
+}
+h1 a {
+  color: #444;
+}
+/* top all favorite*/
+.top .newThread {
+  background: #fff;
+}
+.top .newThread a {
+  background: #a89158;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 30px;
+}
+.top .newThread a:hover {
+  opacity: 0.7;
+}
+.top .thread .contents,
+.all .thread .contents,
+.favorite .thread .contents {
+  padding-top: 10px;
+}
+.top .options,
+.all .options,
+.favorite .options {
+  padding: 10px;
+  text-align: center;
+}
+.top .options p,
+.all .options p,
+.favorite .options p {
+  padding: 0 10px;
+  display: inline-block;
+}
+.top label,
+.all label {
+  display: inline-block;
+}
+.top input,
+.all input {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .top label,
+  .all label {
+    display: block;
+  }
+  .top input,
+  .all input {
+    display: block;
+    width: 100%;
+  }
+}
+.top textarea,
+.all textarea {
+  display: block;
+  width: 100%;
+  margin: 20px auto 0;
+  resize: none;
+}
+.favorite .favorite_title{
+  text-align: center;
+  padding: 20px;
+}
+/* login register new*/
+.login h2,
+.register h2{
+  text-align: center;
+}
+.login input,
+.register input{
+  display: block;
+  width: 80%;
+}
+.login label,
+.register label{
+  display: block;
+}
+.login_form a {
+  display: block;
+  text-align: center;
+}
+.login p,/*alert p*/
+.register p{
+  text-align: center;
+  padding-top: 5px;
+}
+/* complete logout*/
+.complete,
+.logout {
+  text-align: center;
+}
+.complete p,
+.logout p {
+  padding: 20px;
+}
+/* edit */
+.edit .thread .contents {
+  padding-top: 10px;
+}
+.edit .editer {
+  width: 80%;
+  margin: auto;
+}
+.edit label {
+  display: inline-block;
+}
+.edit input {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .edit label {
+    display: block;
+  }
+  .edit input {
+    display: block;
+    width: 100%;
+  }
+}
+.edit .btns {
+  text-align: right;
+}
+.edit #delete_btn {
+  display: inline-block;
+  margin: 0 10px;
+}
+.edit #edit_btn{
+  display: inline-block;
+}
+/* new */
+.new{
+  padding: 20px 0;
+}
+.new h2{
+  text-align: center;
+}
+.new input {
+  width: 100%;
+  margin: 10px 0;
+}
+@media screen and (max-width: 768px) {
+  .new label {
+    display: block;
+  }
+  .new input {
+    display: block;
+    width: 100%;
+  }
+}
+.new .new_area{
+  width: 80%;
+  margin: auto;
+}
+.new .grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  .new .grid{
+    grid-template-columns: 1fr;
+  }
+}

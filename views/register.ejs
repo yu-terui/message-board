@@ -1,0 +1,112 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <title>なんでも掲示板</title>
+    </head>
+    <body>
+        <%- header %>
+        <main>
+            <div class="container">
+                <section class="register">
+                    <form class="register_form" action="/complete" method="post">
+                        <h2>新規ユーザー登録</h2>
+                        <label for="username">ユーザー名</label><input type="text" id="username" name="username" />
+                        <p id="username_alert"></p>
+                        <label for="email">ID(メールアドレス)</label><input type="text" id="email" name="email" />
+                        <p id="email_alert"></p>
+                        <label for="password">パスワード</label><input type="password" id="password" name="password" />
+                        <p id="password_alert"></p>
+                        <button class="btn" id="register_btn" type="button">登録</button>
+                        <!-- ボタンを押すとバリデーション -->
+                    </form>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="container"><small>&copy;2024 message-board.All Rights Reserved.</small></div>
+        </footer>
+    </body>
+    <script>
+        
+        //バリデーション
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const username_alert = document.getElementById("username_alert");
+        const email_alert = document.getElementById("email_alert");
+        const password_alert = document.getElementById("password_alert");
+        const register_btn = document.getElementById("register_btn");
+        //空欄チェック
+        //既存チェック（ID、ユーザー名のかぶり）
+        register_btn.addEventListener("click", async function (e) {
+            e.preventDefault();
+            // バリデーションが成功したかどうかのフラグを定義
+            let isValid = true;
+            if (!username.value) {
+                username_alert.innerHTML = "入力してください";
+                username_alert.style.color = "red";
+                username.style.borderColor = "red";
+                isValid = false;
+            } else {
+                username_alert.innerHTML = "";
+                username.style.borderColor = "#444"
+                try {
+                    // ユーザー名の重複チェック
+                    const res = await fetch(`/checkUsername?username=${encodeURIComponent(username.value)}`)
+                    const data = await res.json();
+                    if (data.exists) {
+                        // ユーザー名が重複している場合のエラーメッセージを表示
+                        username_alert.innerHTML = "このユーザー名は既に使用されています";
+                        username_alert.style.color = "red";
+                        username.style.borderColor = "red";
+                        isValid = false;
+                    }
+                }
+                catch (error) {
+                    console.error('Error checking username:', error);
+                    isValid = false;
+                }
+            }
+            if (!email.value) {
+                email_alert.innerHTML = "入力してください";
+                email_alert.style.color = "red";
+                email.style.borderColor = "red";
+                isValid = false;
+            } else {
+                email_alert.innerHTML = "";
+                email.style.borderColor = "#444";
+                try {
+                    // ユーザー名の重複チェック
+                    const res = await fetch(`/checkEmail?email=${encodeURIComponent(email.value)}`)
+                    const data = await res.json();
+                    if (data.exists) {
+                        // ユーザー名が重複している場合のエラーメッセージを表示
+                        email_alert.innerHTML = "このメールアドレスは既に使用されています";
+                        email_alert.style.color = "red";
+                        email.style.borderColor = "red";
+                        isValid = false;
+                    }
+                }
+                catch (error) {
+                    console.error('Error checking email:', error);
+                    isValid = false;
+                }
+            }
+            if (!password.value) {
+                password_alert.innerHTML = "入力してください";
+                password_alert.style.color = "red";
+                password.style.borderColor = "red";
+                isValid = false;
+            } else {
+                password_alert.innerHTML = "";
+                password.style.borderColor = "#444";
+            }
+            //フォーム送信
+            if (isValid) {
+                document.querySelector(".register_form").submit();
+            }
+        })
+    </script>
+</html>
