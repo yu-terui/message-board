@@ -28,11 +28,14 @@
         <main>
             <div class="container">
                 <section class="login">
-                    <form class="login_form" action="" method="">
+                    <form class="login_form" action="/" method="post">
                         <h2>ユーザーログイン</h2>
-                        <label for="id">ID(メールアドレス)</label><input type="text" id="id" />
-                        <label for="pass">パスワード</label><input type="text" id="pass" />
-                        <button class="btn" id="login_btn" type="submit">ログイン</button>
+                        <p id="alert_message"></p>
+                        <label for="email">ID(メールアドレス)</label><input type="text" id="email" name="email" />
+                        <p id="email_alert"></p>
+                        <label for="password">パスワード</label><input type="password" id="password" name="password" />
+                        <p id="password_alert"></p>
+                        <button class="btn" id="login_btn" type="button">ログイン</button>
                         <p><a href="">新規ユーザー登録はこちら</a></p>
                     </form>
                 </section>
@@ -54,5 +57,74 @@
         board_search.addEventListener("click", function () {
             box.classList.toggle("active")
         })
+        //空欄チェック
+        //DBと照合
+        const login_btn = document.getElementById("login_btn");
+        login_btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            login()
+        })
+        async function login() {
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const alert_message = document.getElementById("alert_message");
+            const email_alert = document.getElementById("email_alert");
+            const password_alert = document.getElementById("password_alert");
+            let isValid = true;
+            if (!email.value) {
+                email_alert.innerHTML = "入力してください";
+                email_alert.style.color = "red";
+                email.style.borderColor = "red";
+                isValid = false;
+            } else {
+                email_alert.innerHTML = "";
+                email_alert.style.color = "#444";
+                email.style.borderColor = "#444";
+            }
+            if (!password.value) {
+                password_alert.innerHTML = "入力してください";
+                password_alert.style.color = "red";
+                password.style.borderColor = "red";
+                isValid = false;
+            } else {
+                password_alert.innerHTML = "";
+                password_alert.style.color = "#444";
+                password.style.borderColor = "#444";
+            }
+            if (!isValid) {
+                return;
+            }
+            try {
+                const res = await fetch(`/fetch_login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email.value, password: password.value })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    if (data.success) {
+                        document.querySelector(".login_form").submit();
+                        window.location.href = "/"
+                    }
+                    else {
+                        email.style.borderColor = "red"
+                        password.style.borderColor = "red"
+                        alert_message.style.color = "red"
+                        alert_message.innerHTML = data.error || ""
+                        isValid = false;
+                    }
+                } else {
+                    alert_message.innerHTML = data.error || "サーバーエラーが発生しました"
+                    alert_message.style.color = "red"
+                    isValid = false;
+                }
+            }
+            catch (error) {
+                console.error("Error:", error)
+                isValid = false;
+            }
+        }
     </script>
 </html>
